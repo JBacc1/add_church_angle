@@ -12,11 +12,7 @@ def calcul_angle(a,b):
 	DLong=-a.location.x+b.location.x
 	angle= (360+((-math.atan2(math.sin(DLong)*math.cos(b.location.y), math.cos(a.location.y)*math.sin(b.location.y) - math.sin(a.location.y)*math.cos(b.location.y)*math.cos(DLong))) /math.pi*180))%360
 	angle= (360+(-math.degrees(math.atan2(math.sin(math.radians(DLong))*math.cos(math.radians(b.location.y)), math.cos(math.radians(a.location.y))*math.sin(math.radians(b.location.y)) - math.sin(math.radians(a.location.y))*math.cos(math.radians(b.location.y))*math.cos(math.radians(DLong)) ) )))%360
-
-#	print(angle)
 	return angle
-
-
 def make_sub_rectangle(rectangle,a,b):
 	"""returns a subrectangle with a and b between 0 and 1, along the long side of the rectangle. If a==b, returns a LineString. If a<0, acts as if a==0, idem if b>1"""
 	if a<0 or b>1: print("in make_sub_rectangle, a or b outside [0,1], unusual use:"+str(a)+","+str(b))
